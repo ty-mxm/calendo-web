@@ -6,6 +6,7 @@
       <!-- Hero Section -->
       <section id="home" class="section hero">
         <div class="hero-content" data-aos="fade-up">
+          <img src="@/assets/logo-calendo-t.png" alt="Logo Calendo" class="logo" />
           <h1 class="hero-title">
             Simplifiez votre organisation avec <span class="gradient-text">Calendo</span>
           </h1>
@@ -140,6 +141,7 @@ body {
   min-height: 90vh;
 }
 
+
 .hero-content {
   padding-right: 40px;
 }
@@ -149,6 +151,12 @@ body {
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 24px;
+}
+.logo {
+  width: 200px; /* Ajustez cette valeur à votre besoin */
+  height: auto; /* Conserve les proportions du logo */
+  display: block;
+  margin-left: 0;
 }
 
 .gradient-text {
@@ -163,6 +171,7 @@ body {
   color: #666;
   margin-bottom: 32px;
 }
+
 
 .hero-image img {
   width: 100%;

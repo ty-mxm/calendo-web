@@ -24,26 +24,22 @@
       <div class="footer-links">
         <h3>Navigation</h3>
         <ul>
-          <li><a href="#home">Accueil</a></li>
           <li><a href="#features">Fonctionnalités</a></li>
           <li><a href="#about">À propos</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
 
-<!-- Liens légaux -->
-<div class="footer-links">
-  <h3>Légal</h3>
-  <ul>
-  <li><router-link to="/privacy">Confidentialité</router-link></li>
-  <li><router-link to="/terms">Conditions d'utilisation</router-link></li>
-  <li><router-link to="/cookies">Cookies</router-link></li>
-  <li><router-link to="/mentions">Mentions légales</router-link></li>
-</ul>
-
-
-</div>
-
+      <!-- Liens légaux -->
+      <div class="footer-links">
+        <h3>Légal</h3>
+        <ul>
+          <li><router-link to="/privacy">Confidentialité</router-link></li>
+          <li><router-link to="/terms">Conditions d'utilisation</router-link></li>
+          <li><router-link to="/cookies">Cookies</router-link></li>
+          <li><router-link to="/mentions">Mentions légales</router-link></li>
+        </ul>
+      </div>
 
       <!-- Contact -->
       <div class="footer-contact">
@@ -66,7 +62,6 @@
           <select v-model="selectedLanguage" class="language-select">
             <option value="fr">Français</option>
             <option value="en">English</option>
-          
           </select>
         </div>
       </div>

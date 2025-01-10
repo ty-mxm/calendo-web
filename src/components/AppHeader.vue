@@ -2,14 +2,14 @@
   <header class="header" :class="{ 'header-scrolled': isScrolled }">
     <nav class="nav-container">
       <div class="brand">
-        <img src="@/assets/logo-calendo-t.png" alt="Logo Calendo" class="logo" />
+        
         <div class="brand-text">
           <span class="brand-name">Calendo</span>
         </div>
       </div>
 
       <div class="nav-links" :class="{ 'nav-active': isMenuOpen }">
-        <a href="#home" class="nav-link" @click="closeMenu">Accueil</a>
+       
         <a href="#features" class="nav-link" @click="closeMenu">Fonctionnalités</a>
         <a href="#about" class="nav-link" @click="closeMenu">À propos</a>
         <button class="cta-button">Commencer</button>
@@ -98,6 +98,7 @@ export default {
   font-size: 1.5rem;
   font-weight: 800;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

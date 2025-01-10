@@ -14,7 +14,7 @@ const routes = [
   { path: "/description", name: "Description", component: AppDescription },
   { path: "/contact", name: "Contact", component: AppFooter },
   { path: "/cookies", name: "Cookies", component: AppCookies },
-  { path: "/terms", name: "Conditions", component: AppConditions },
+  { path: "/terms", name: "terms", component: AppConditions },
   { path: "/privacy", name: "Confidential", component: AppConfidential },
   { path: "/mentions", name: "Mention", component: AppMention },
 ];

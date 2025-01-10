@@ -11,13 +11,14 @@
         Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at
         nibh elementum imperdiet. Duis sagittis ipsum.
       </p>
-      <a href="/" class="back-link">Retour à l'accueil</a>
+      <router-link to="/" class="back-link">Retour à l'accueil</router-link>
+
     </div>
   </template>
   
   <script>
   export default {
-    name: "ConditionsUtilisationPage",
+    name: "AppConditions",
   };
   </script>
   
