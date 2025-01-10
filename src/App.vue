@@ -156,7 +156,7 @@ body {
   width: 200px; /* Ajustez cette valeur à votre besoin */
   height: auto; /* Conserve les proportions du logo */
   display: block;
-  margin-left: 0;
+  margin-left: -48px;
 }
 
 .gradient-text {
