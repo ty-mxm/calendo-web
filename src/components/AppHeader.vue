@@ -101,6 +101,7 @@ export default {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  align-items: center;
 }
 
 .nav-links {

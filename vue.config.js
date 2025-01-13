@@ -12,4 +12,7 @@ module.exports = defineConfig({
       }),
     ],
   },
+  devServer: {
+    historyApiFallback: true, // Redirection pour le mode 'history'
+  },
 });

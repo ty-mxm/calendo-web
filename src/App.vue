@@ -11,7 +11,7 @@
             Simplifiez votre organisation avec <span class="gradient-text">Calendo</span>
           </h1>
           <p class="hero-description">
-            Transformez la gestion de vos événements avec notre solution intuitive. 
+            Transformez la gestion de vos événements avec notre solution intuitive.
             Planification, votes et collaboration en temps réel, tout en un seul endroit.
           </p>
           <button class="primary-button" @click="scrollTo('features')">
@@ -33,18 +33,18 @@
             </div>
             <h3>Planification intuitive</h3>
             <p>
-              Une interface épurée pour organiser vos événements sans effort, 
+              Une interface épurée pour organiser vos événements sans effort,
               même les plus complexes.
             </p>
           </div>
-          
+
           <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
             <div class="card-icon">
               <i class="fas fa-vote-yea"></i>
             </div>
             <h3>Système de vote</h3>
             <p>
-              Prenez des décisions collectives facilement avec notre système 
+              Prenez des décisions collectives facilement avec notre système
               de vote en temps réel.
             </p>
           </div>
@@ -53,23 +53,52 @@
             <div class="card-icon">
               <i class="fas fa-users"></i>
             </div>
+            <h3>Gestion d'équipe optimisée</h3>
+            <p>
+              Coordonnez vos équipes efficacement avec des outils de collaboration, des rôles personnalisés et un calendrier partagé.
+            </p>
+          </div>
+
+          <div class="feature-card bottom-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="card-icon">
+              <i class="fas fa-users"></i>
+            </div>
             <h3>Collaboration</h3>
             <p>
-              Travaillez ensemble efficacement grâce à nos outils de 
+              Travaillez ensemble efficacement grâce à nos outils de
               collaboration intégrés.
+            </p>
+          </div>
+          
+
+          <div class="feature-card bottom-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="card-icon">
+              <i class="fas fa-calendar"></i>
+            </div>
+            <h3>Intégration de calendrier</h3>
+            <p>
+              Synchronisez vos événements et utilisez des fonctionnalités avancées avec Google Calendar pour simplifier votre gestion quotidienne.
+            </p>
+          </div>
+          <div class="feature-card bottom-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="card-icon">
+              <i class="fas fa-calendar"></i>
+            </div>
+            <h3>Intégration de calendrier</h3>
+            <p>
+              Synchronisez vos événements et utilisez des fonctionnalités avancées avec Google Calendar pour simplifier votre gestion quotidienne.
             </p>
           </div>
         </div>
       </section>
+      
 
       <!-- About Section -->
       <section id="about" class="section about">
         <div class="about-content" data-aos="fade-right">
           <h2>Pourquoi Calendo ?</h2>
           <p>
-            Calendo repense la gestion d'événements pour l'ère moderne. 
-            Notre plateforme combine simplicité et puissance pour vous offrir 
-            une expérience exceptionnelle.
+            Calendo révolutionne la gestion des événements et des équipes pour s'adapter aux besoins modernes de collaboration et de productivité. Plus qu'une simple plateforme de gestion de tâches ou d'organisation, Calendo combine puissance et simplicité pour offrir une expérience inégalée à ses utilisateurs.
           </p>
         </div>
         <div class="about-image" data-aos="fade-left">
@@ -141,7 +170,6 @@ body {
   min-height: 90vh;
 }
 
-
 .hero-content {
   padding-right: 40px;
 }
@@ -152,6 +180,7 @@ body {
   line-height: 1.2;
   margin-bottom: 24px;
 }
+
 .logo {
   width: 200px; /* Ajustez cette valeur à votre besoin */
   height: auto; /* Conserve les proportions du logo */
@@ -172,7 +201,6 @@ body {
   margin-bottom: 32px;
 }
 
-
 .hero-image img {
   width: 100%;
   border-radius: 24px;
@@ -182,28 +210,36 @@ body {
 /* Features Section */
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   margin-top: 60px;
+  align-items: center;
+  justify-content: center;
 }
 
 .feature-card {
   background: var(--light);
   padding: 40px;
-  border-radius: 20px;
+  border-radius: 50%;
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 300px;
+  height: 300px;
 }
 
 .feature-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
 }
 
 .card-icon {
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
-  border-radius: 16px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -211,8 +247,21 @@ body {
 }
 
 .card-icon i {
-  font-size: 24px;
+  font-size: 32px;
   color: var(--light);
+}
+
+/* Animation */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* Buttons */
@@ -272,6 +321,26 @@ body {
 
   .features-grid {
     grid-template-columns: 1fr;
+  }
+
+  .bottom-card {
+    grid-column: span 1;
+    justify-self: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 60px;
+  }
+
+  .bottom-card {
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    justify-self: center;
+    
   }
 }
 </style>

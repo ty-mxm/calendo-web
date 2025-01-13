@@ -1,23 +1,23 @@
-<!-- Page des Cookies -->
+<!-- Page de Confidentialité -->
 <template>
     <div class="legal-page">
-      <h1>Politique sur les Cookies</h1>
+      <h1>Politique de Confidentialité</h1>
       <p>
-        Cette page explique comment nous utilisons des cookies pour améliorer votre
-        expérience sur notre site.
+        Chez Calendo, nous respectons votre vie privée. Cette politique explique comment
+        vos données sont collectées, utilisées et protégées.
       </p>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
         Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at
         nibh elementum imperdiet. Duis sagittis ipsum.
       </p>
-      <a href="/" class="back-link">Retour à l'accueil</a>
+      <router-link :to="{ name: 'Home' }" class="back-link">Retour à l'accueil</router-link>
     </div>
   </template>
   
   <script>
   export default {
-    name: "CookiesPage",
+    name: "PrivacyPage",
   };
   </script>
   

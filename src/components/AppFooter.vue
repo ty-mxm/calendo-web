@@ -34,10 +34,26 @@
       <div class="footer-links">
         <h3>Légal</h3>
         <ul>
-          <li><router-link to="/privacy">Confidentialité</router-link></li>
-          <li><router-link to="/terms">Conditions d'utilisation</router-link></li>
-          <li><router-link to="/cookies">Cookies</router-link></li>
-          <li><router-link to="/mentions">Mentions légales</router-link></li>
+          <li>
+            <a href="#" @click.prevent="openModal('Confidentialité', confidentialityContent)">
+              Confidentialité
+            </a>
+          </li>
+          <li>
+            <a href="#" @click.prevent="openModal('Conditions d\'utilisation', termsContent)">
+              Conditions d'utilisation
+            </a>
+          </li>
+          <li>
+            <a href="#" @click.prevent="openModal('Cookies', cookiesContent)">
+              Cookies
+            </a>
+          </li>
+          <li>
+            <a href="#" @click.prevent="openModal('Mentions légales', legalMentionsContent)">
+              Mentions légales
+            </a>
+          </li>
         </ul>
       </div>
 
@@ -49,7 +65,7 @@
           Nous contacter
         </a>
         <p class="contact-info">
-          <i class="fas fa-envelope"></i> contact@calendo.com<br>
+          <i class="fas fa-envelope"></i> contact@calendo.com<br />
           <i class="fas fa-phone"></i> 514-572-0000
         </p>
       </div>
@@ -57,7 +73,7 @@
 
     <div class="footer-bottom">
       <div class="footer-bottom-content">
-        <p class="copyright">&copy; {{ currentYear }} Calendo. Tous droits réservés.</p>
+        <p class="copyright">© {{ currentYear }} Calendo. Tous droits réservés.</p>
         <div class="language-selector">
           <select v-model="selectedLanguage" class="language-select">
             <option value="fr">Français</option>
@@ -66,20 +82,112 @@
         </div>
       </div>
     </div>
+
+    <!-- Legal Modal -->
+    <LegalModal :visible="modalVisible" :title="modalTitle" :content="modalContent" @close="closeModal" />
   </footer>
 </template>
 
 <script>
+import LegalModal from '@/components/LegalModal.vue';
+
 export default {
-  name: "AppFooter",
+  name: 'AppFooter',
+  components: {
+    LegalModal,
+  },
   data() {
     return {
       selectedLanguage: 'fr',
-      currentYear: new Date().getFullYear()
+      currentYear: new Date().getFullYear(),
+      modalVisible: false,
+      modalTitle: '',
+      modalContent: '',
+      // Contenus dynamiques pour les modales
+      confidentialityContent: `
+        <p>Chez <strong>Calendo</strong>, nous accordons une grande importance à la protection de vos données personnelles.</p>
+        <ol>
+          <li><strong>Données collectées :</strong>
+            <ul>
+              <li>Informations personnelles comme votre nom, adresse e-mail et numéro de téléphone.</li>
+              <li>Données liées à votre utilisation de notre application.</li>
+            </ul>
+          </li>
+          <li><strong>Utilisation des données :</strong>
+            <ul>
+              <li>Fournir et améliorer nos services.</li>
+              <li>Personnaliser votre expérience sur la plateforme.</li>
+            </ul>
+          </li>
+          <li><strong>Sécurité :</strong>
+            <p>Nous utilisons des mesures avancées pour protéger vos données.</p>
+          </li>
+        </ol>
+        <p>Pour toute question, contactez-nous à : <a href="mailto:privacy@calendo.com">privacy@calendo.com</a>.</p>
+      `,
+      termsContent: `
+        <p>Les présentes conditions définissent vos droits et obligations :</p>
+        <ol>
+          <li><strong>Accès et inscription :</strong>
+            <ul>
+              <li>Informations exactes requises pour l'inscription.</li>
+              <li>Responsabilité de vos identifiants.</li>
+            </ul>
+          </li>
+          <li><strong>Utilisation :</strong>
+            <ul>
+              <li>Pas d'activités illégales ou nuisibles.</li>
+              <li>Respect des conditions d'utilisation.</li>
+            </ul>
+          </li>
+        </ol>
+        <p>Pour toute question, contactez-nous à : <a href="mailto:support@calendo.com">support@calendo.com</a>.</p>
+      `,
+      cookiesContent: `
+        <p>Cette politique explique notre utilisation des cookies :</p>
+        <ol>
+          <li><strong>Types de cookies :</strong>
+            <ul>
+              <li>Cookies essentiels pour le fonctionnement.</li>
+              <li>Cookies analytiques pour améliorer nos services.</li>
+            </ul>
+          </li>
+          <li><strong>Gestion des cookies :</strong>
+            <p>Vous pouvez désactiver les cookies dans votre navigateur.</p>
+          </li>
+        </ol>
+        <p>Pour plus d'informations, contactez-nous à : <a href="mailto:cookies@calendo.com">cookies@calendo.com</a>.</p>
+      `,
+      legalMentionsContent: `
+        <p><strong>Éditeur du site :</strong></p>
+        <ul>
+          <li>Calendo SARL</li>
+          <li>123 Rue de l'Innovation, Montreal</li>
+          <li><a href="mailto:contact@calendo.com">contact@calendo.com</a></li>
+        </ul>
+        <p><strong>Hébergeur :</strong></p>
+        <ul>
+          <li>CloudHosting Pro</li>
+          <li>456 Avenue des Serveurs, Montreal</li>
+        </ul>
+      `,
     };
-  }
+  },
+  methods: {
+    openModal(title, content) {
+      this.modalTitle = title;
+      this.modalContent = content;
+      this.modalVisible = true;
+    },
+    closeModal() {
+      this.modalVisible = false;
+    },
+  },
 };
 </script>
+
+
+
 
 <style scoped>
 .footer {
@@ -106,7 +214,8 @@ export default {
 
 .footer-logo {
   height: 50px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-left: -15px;
 }
 
 .brand-description {
