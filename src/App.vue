@@ -202,8 +202,8 @@ body {
 }
 
 .hero-image img {
-  width: 90%;
-  border-radius: 20px;
+  width: 100%;
+  border-radius: 24px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
