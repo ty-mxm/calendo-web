@@ -102,7 +102,7 @@
           </p>
         </div>
         <div class="about-image" data-aos="fade-left">
-          <img src="@/assets/app-mobile.jpg" alt="Application mobile" />
+          <img src="@/assets/calend-pic.jpg" alt="Application mobile" />
         </div>
       </section>
 
@@ -202,8 +202,8 @@ body {
 }
 
 .hero-image img {
-  width: 100%;
-  border-radius: 24px;
+  width: 90%;
+  border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
